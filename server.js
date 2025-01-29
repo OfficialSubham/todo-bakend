@@ -12,6 +12,11 @@ app.get("/", (req, res)=> {
     res.json(todos)
 })
 
+app.get("/todo/", (req, res) => {
+    const todo = todos.find(todo => todo.id === Number(req.query.id))
+    res.json(todo)
+})
+
 
 
 app.listen(PORT)
